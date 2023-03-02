@@ -12,8 +12,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: "mesndf",
-    loadChildren: () => import('./mesndf/mesndf.module').then(m => m.MesndfModule)
+    path: 'mesndf',
+    loadChildren: () => import('./mesndf/mesndf.module').then( m => m.MesndfPageModule)
+  },
+  {
+    path: 'formulaire-ndf',
+    loadChildren: () => import('./formulaire-ndf/formulaire-ndf.module').then( m => m.FormulaireNdfPageModule)
+  },
+  {
+    path: 'historique-ndf',
+    loadChildren: () => import('./historique-ndf/historique-ndf.module').then( m => m.HistoriqueNdfPageModule)
+  },
+  {
+    path: 'inscription-employee',
+    loadChildren: () => import('./inscription-employee/inscription-employee.module').then( m => m.InscriptionEmployeePageModule)
+  },
+  {
+    path: 'traitement-ndf',
+    loadChildren: () => import('./traitement-ndf/traitement-ndf.module').then( m => m.TraitementNdfPageModule)
   }
 ];
 

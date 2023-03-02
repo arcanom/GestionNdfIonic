@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MesndfPageRoutingModule } from './mesndf-routing.module';
+import { HistoriqueNdfPageRoutingModule } from './historique-ndf-routing.module';
 
-import { MesndfPage } from './mesndf.page';
+import { HistoriqueNdfPage } from './historique-ndf.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MesndfPageRoutingModule
+    HistoriqueNdfPageRoutingModule
   ],
-  declarations: [MesndfPage]
+  declarations: [HistoriqueNdfPage]
 })
-export class MesndfPageModule {}
+export class HistoriqueNdfPageModule {}
