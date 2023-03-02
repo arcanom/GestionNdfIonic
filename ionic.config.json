@@ -1,0 +1,7 @@
+{
+  "name": "GestionNdfIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
