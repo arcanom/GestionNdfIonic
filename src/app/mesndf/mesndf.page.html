@@ -6,32 +6,32 @@
 
 <ion-content class="ion-padding">
 
-  <ion-content>
+  <ion-item>
     <ion-label> Mes notes de frais</ion-label>
-  </ion-content>
-  <ion-content>
-  </ion-content>
+  </ion-item>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="discover">
+      <ion-tab-button routerLink="/inscription-employee">
         <ion-icon name="person"></ion-icon>
-        <ion-label>Créer employé</ion-label>
+        <ion-label>Créer </ion-label>
+        <ion-label>employé</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="offers">
+      <ion-tab-button routerLink="/formulaire-ndf">
         <ion-icon name="card"></ion-icon>
-        <ion-label>Créer note de frais</ion-label>
+        <ion-label>Créer </ion-label>
+        <ion-label>note de frais</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="offers">
+      <ion-tab-button routerLink="/historique-ndf">
         <ion-icon name="clipboard"></ion-icon>
         <ion-label>Historique</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="offers">
+      <ion-tab-button routerLink="/traitement-ndf">
         <ion-icon name="document-outline"></ion-icon>
         <ion-label>Voir notes</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="offers">
+      <ion-tab-button (click)="onClick()">
         <ion-icon name="log-out"></ion-icon>
-        <ion-label>deconnexion</ion-label>
+        <ion-label>Log out</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

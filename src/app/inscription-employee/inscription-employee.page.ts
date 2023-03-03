@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription-employee',
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inscription-employee.page.scss'],
 })
 export class InscriptionEmployeePage implements OnInit {
+  onClick(){
+    this.route.navigate(['/connexion'])
+  }
 
-  constructor() { }
+  onSubmit(form: NgForm){
+    this.route.navigate(['/mesndf'])
+  }
+
+  constructor(private route : Router) { }
 
   ngOnInit() {
   }
