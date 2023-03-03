@@ -43,6 +43,18 @@
                 </ion-label>
               </ion-item>
               <ion-item>
+                <ion-select placeholder="Select categorie" ngModel name="categorie" required #categoryCtrl="ngModel">
+                  <ion-select-option value="apples">Apples</ion-select-option>
+                  <ion-select-option value="oranges">Oranges</ion-select-option>
+                  <ion-select-option value="bananas">Bananas</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-item *ngIf="!categoryCtrl.valid && categoryCtrl.touched" lines="none">
+                <ion-label color="danger">
+                   Ce champ est incorrect
+                </ion-label>
+              </ion-item>
+              <ion-item>
                 <ion-label position="floating">Description</ion-label>
                 <ion-textarea placeholder="description de la note de frais" ngModel name="description" required #descriptionCtrl="ngModel"></ion-textarea>
               </ion-item>
