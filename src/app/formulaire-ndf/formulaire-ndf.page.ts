@@ -79,7 +79,7 @@ onFileChange(event: any){
           }
       }
       this.myFiles = []
-    // this.route.navigate(['/mesndf'])
+      this.route.navigate(['/mesndf'])
 
   }
 

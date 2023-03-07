@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'traitement-ndf',
     loadChildren: () => import('./traitement-ndf/traitement-ndf.module').then( m => m.TraitementNdfPageModule)
+  },
+  {
+    path: 'details-ndf/:id',
+    loadChildren: () => import('./detailsndf/detailsndf.module').then( m => m.DetailsndfPageModule)
   }
 ];
 

@@ -6,10 +6,51 @@
 
 <ion-content>
   <ion-item  lines="none">
-    <ion-label> notes de  frais non validés </ion-label>
+    <ion-label  style="font-weight: bold;" class="ion-text-center"> notes de  frais non validés </ion-label>
   </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="font-weight: bold;">Titre</ion-col>
+        <ion-col  style="font-weight: bold;">Date</ion-col>
+        <ion-col  style="font-weight: bold;">Montant</ion-col>
+        <ion-col  style="font-weight: bold;">Actions</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let ndf of ndfs">
+        <ion-col *ngIf="ndf.status==='INPROGRESS'">{{ndf.title}}</ion-col>
+        <ion-col *ngIf="ndf.status==='INPROGRESS'">{{ndf.date | date}}</ion-col>
+        <ion-col *ngIf="ndf.status==='INPROGRESS'">{{ndf.amount}}</ion-col>
+        <ion-col *ngIf="ndf.status==='INPROGRESS'">
+          <ion-icon name="information-circle-outline" [routerLink]="['/details-ndf',ndf.id]"></ion-icon>
+          <ion-icon name="checkmark-outline" (click)="updateStatusToValidated(ndf.id)"></ion-icon>
+          <ion-icon name="close-outline" (click)="updateStatusToRefused(ndf.id)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+
   <ion-item  lines="none">
-    <ion-label> notes de  frais à payer</ion-label>
+    <ion-label style="font-weight: bold;" class="ion-text-center"> notes de  frais à payer</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="font-weight: bold;">Titre</ion-col>
+        <ion-col  style="font-weight: bold;">Date</ion-col>
+        <ion-col  style="font-weight: bold;">Montant</ion-col>
+        <ion-col  style="font-weight: bold;">Actions</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let ndf of ndfs">
+        <ion-col *ngIf="ndf.status==='VALIDATED'">{{ndf.title}}</ion-col>
+        <ion-col *ngIf="ndf.status==='VALIDATED'">{{ndf.date | date}}</ion-col>
+        <ion-col *ngIf="ndf.status==='VALIDATED'">{{ndf.amount}}</ion-col>
+        <ion-col *ngIf="ndf.status==='VALIDATED'">
+          <ion-icon name="information-circle-outline" [routerLink]="['/details-ndf',ndf.id]"></ion-icon>
+          <ion-icon name="cash-outline" (click)="updateStatusToPaid(ndf.id)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
