@@ -43,10 +43,8 @@
                 </ion-label>
               </ion-item>
               <ion-item>
-                <ion-select placeholder="Select categorie" ngModel name="categorie" required #categoryCtrl="ngModel">
-                  <ion-select-option value="apples">Apples</ion-select-option>
-                  <ion-select-option value="oranges">Oranges</ion-select-option>
-                  <ion-select-option value="bananas">Bananas</ion-select-option>
+                <ion-select placeholder="Select category" ngModel name="categorie" required #categoryCtrl="ngModel">
+                  <ion-select-option *ngFor="let categorie of categories" value={{categorie.id}}>{{categorie.name}}</ion-select-option>
                 </ion-select>
               </ion-item>
               <ion-item *ngIf="!categoryCtrl.valid && categoryCtrl.touched" lines="none">
@@ -64,7 +62,7 @@
                 </ion-label>
               </ion-item>
               <ion-item>
-                <ion-input type="file" ngModel name="image" required #imageCtrl="ngModel"></ion-input>
+                <ion-input type="file" ngModel name="image" required #imageCtrl="ngModel" (change)="onFileChange($event)" multiple ></ion-input>
               </ion-item>
               <ion-item *ngIf="!imageCtrl.valid && imageCtrl.touched" lines="none">
                 <ion-label color="danger">
