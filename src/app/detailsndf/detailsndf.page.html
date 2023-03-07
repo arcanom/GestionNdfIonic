@@ -1,9 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detailsndf</ion-title>
-  </ion-toolbar>
+
+ <ion-toolbar class="new-background-color" >
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+  <ion-img class="img" src="../../assets/logo.png" ></ion-img>
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item  lines="none">
 
+    <ion-card>
+
+      <ion-card-header>
+        <ion-icon name="arrow-back-outline" color="primary" routerLink="/mesndf"></ion-icon>
+        <ion-card-title>{{title}}</ion-card-title>
+        <ion-card-subtitle>Fait le {{date | date}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>Coût : {{amount}}</ion-label>
+        <ion-label> Description : {{description}} </ion-label>
+        <ion-label> Categorie : {{category}}</ion-label>
+        <ion-label *ngIf="status==='INPROGRESS'" color="primary"> En cours de traitement</ion-label>
+        <ion-label *ngIf="status==='VALIDATED'" color="success"> Validé en cours  de paiement</ion-label>
+        <ion-label *ngIf="status==='VALIDATED'" color="danger"> Refusé</ion-label>
+        <ion-label *ngIf="status==='VALIDATED'" color="warning"> Payé</ion-label>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-item>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpserviceService } from '../service/httpservice.service';
 
 @Component({
   selector: 'app-historique-ndf',
@@ -8,9 +9,24 @@ import { Router } from '@angular/router';
 })
 export class HistoriqueNdfPage implements OnInit {
 
-  constructor(private route : Router) { }
+  constructor(private route : Router, private httpService : HttpserviceService) { }
+
+
+  ndfs : any
+  status : any
 
   ngOnInit() {
+    this.getAllNdf()
+  }
+  getAllNdf(){
+    this.httpService.getAllNdf().subscribe(x => {
+      this.ndfs = x
+      console.log(this.ndfs)
+    })
+  }
+
+  toDetails(id:number){
+    this.route.navigate(['/details-ndf/'+id])
   }
 
   onClick(){

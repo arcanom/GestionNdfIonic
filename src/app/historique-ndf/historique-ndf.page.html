@@ -6,7 +6,46 @@
 
 <ion-content>
   <ion-item  lines="none">
-    <ion-label> Historique notes de  frais</ion-label>
+    <ion-label style="font-weight: bold;" class="ion-text-center"> Notes de  frais payées</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="font-weight: bold;">Titre</ion-col>
+        <ion-col  style="font-weight: bold;">Date</ion-col>
+        <ion-col  style="font-weight: bold;">Montant</ion-col>
+        <ion-col  style="font-weight: bold;">Actions</ion-col>
+      </ion-row>
+      <ion-row *ngFor=" let ndf of ndfs">
+        <ion-col *ngIf="ndf.status==='PAID'">{{ndf.title}}</ion-col>
+        <ion-col *ngIf="ndf.status==='PAID'">{{ndf.date | date}}</ion-col>
+        <ion-col *ngIf="ndf.status==='PAID'">{{ndf.amount}}</ion-col>
+        <ion-col *ngIf="ndf.status==='PAID'">
+          <ion-icon name="information-circle-outline" (click)="toDetails(ndf.id)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item  lines="none">
+    <ion-label style="font-weight: bold;" class="ion-text-center"> Notes de  frais refusées</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="font-weight: bold;">Titre</ion-col>
+        <ion-col  style="font-weight: bold;">Date</ion-col>
+        <ion-col  style="font-weight: bold;">Montant</ion-col>
+        <ion-col  style="font-weight: bold;">Actions</ion-col>
+      </ion-row>
+      <ion-row *ngFor=" let ndf of ndfs">
+        <ion-col *ngIf="ndf.status==='REFUSED'">{{ndf.title}}</ion-col>
+        <ion-col *ngIf="ndf.status==='REFUSED'">{{ndf.date | date}}</ion-col>
+        <ion-col *ngIf="ndf.status==='REFUSED'">{{ndf.amount}}</ion-col>
+        <ion-col *ngIf="ndf.status==='REFUSED'">
+          <ion-icon name="information-circle-outline" (click)="toDetails(ndf.id)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
   <ion-tabs>
     <ion-tab-bar slot="bottom">

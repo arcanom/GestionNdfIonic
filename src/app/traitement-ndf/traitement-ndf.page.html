@@ -21,7 +21,7 @@
         <ion-col *ngIf="ndf.status==='INPROGRESS'">{{ndf.date | date}}</ion-col>
         <ion-col *ngIf="ndf.status==='INPROGRESS'">{{ndf.amount}}</ion-col>
         <ion-col *ngIf="ndf.status==='INPROGRESS'">
-          <ion-icon name="information-circle-outline" [routerLink]="['/details-ndf',ndf.id]"></ion-icon>
+          <ion-icon name="information-circle-outline" (click)="toDetails(ndf.id)"></ion-icon>
           <ion-icon name="checkmark-outline" (click)="updateStatusToValidated(ndf.id)"></ion-icon>
           <ion-icon name="close-outline" (click)="updateStatusToRefused(ndf.id)"></ion-icon>
         </ion-col>
@@ -46,7 +46,7 @@
         <ion-col *ngIf="ndf.status==='VALIDATED'">{{ndf.date | date}}</ion-col>
         <ion-col *ngIf="ndf.status==='VALIDATED'">{{ndf.amount}}</ion-col>
         <ion-col *ngIf="ndf.status==='VALIDATED'">
-          <ion-icon name="information-circle-outline" [routerLink]="['/details-ndf',ndf.id]"></ion-icon>
+          <ion-icon name="information-circle-outline" (click)="toDetails(ndf.id)"></ion-icon>
           <ion-icon name="cash-outline" (click)="updateStatusToPaid(ndf.id)"></ion-icon>
         </ion-col>
       </ion-row>
