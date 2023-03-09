@@ -1,9 +1,6 @@
 <ion-header>
 
  <ion-toolbar class="new-background-color" >
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
   <ion-img class="img" src="../../assets/logo.png" ></ion-img>
 </ion-toolbar>
 </ion-header>
@@ -24,8 +21,8 @@
         <ion-label> Categorie : {{category}}</ion-label>
         <ion-label *ngIf="status==='INPROGRESS'" color="primary"> En cours de traitement</ion-label>
         <ion-label *ngIf="status==='VALIDATED'" color="success"> Validé en cours  de paiement</ion-label>
-        <ion-label *ngIf="status==='VALIDATED'" color="danger"> Refusé</ion-label>
-        <ion-label *ngIf="status==='VALIDATED'" color="warning"> Payé</ion-label>
+        <ion-label *ngIf="status==='REFUSED'" color="danger"> Refusé</ion-label>
+        <ion-label *ngIf="status==='PAID'" color="warning"> Payé</ion-label>
       </ion-card-content>
 
     </ion-card>

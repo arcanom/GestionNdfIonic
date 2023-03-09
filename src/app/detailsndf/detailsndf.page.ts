@@ -31,6 +31,7 @@ export class DetailsndfPage implements OnInit {
   getNdfById(id:number){
     this.httpService.getNdfById(this.id).subscribe(x=> {
       this.ndf = x
+      console.log(this.ndf)
       this.title = this.ndf.title
       this.date = this.ndf.date
       this.amount = this.ndf.amount

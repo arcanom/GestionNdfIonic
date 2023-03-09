@@ -61,6 +61,8 @@ export class TraitementNdfPage implements OnInit {
   }
 
   onClick(){
+    sessionStorage.clear()
+    localStorage.clear()
     this.route.navigate(['/connexion'])
   }
 

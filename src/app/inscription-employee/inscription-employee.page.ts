@@ -12,6 +12,8 @@ import { HttpserviceService } from '../service/httpservice.service';
 export class InscriptionEmployeePage implements OnInit {
   employee : Employeerequest
   onClick(){
+    sessionStorage.clear()
+    localStorage.clear()
     this.route.navigate(['/connexion'])
   }
 

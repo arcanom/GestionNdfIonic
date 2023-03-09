@@ -18,10 +18,15 @@ export class FormulaireNdfPage implements OnInit {
   ndf :  Ndfrequest
   id: any
   idNdf : number
+  idEmployee : any
   data : any
   formData : any
-  role: any = "admin"
+  userdetails : any
+  role: any
   ngOnInit() {
+    this.userdetails = JSON.parse(sessionStorage.getItem("userdetails"))
+    this.role = this.userdetails.authorities[0].authority
+    this.idEmployee =  localStorage.getItem("id")
     this.getCategories()
   }
 
@@ -33,7 +38,8 @@ export class FormulaireNdfPage implements OnInit {
   }
 
   onClick(){
-
+    sessionStorage.clear()
+    localStorage.clear()
     this.route.navigate(['/connexion'])
 
 }
@@ -53,7 +59,7 @@ onFileChange(event: any){
             date : form.value.date,
             status: "INPROGRESS",
             admin:0,
-            employee:0,
+            employee: this.idEmployee,
             category : form.value.categorie
           }
           // console.log(this.ndf)

@@ -30,6 +30,8 @@ export class HistoriqueNdfPage implements OnInit {
   }
 
   onClick(){
+    sessionStorage.clear()
+    localStorage.clear()
     this.route.navigate(['/connexion'])
 
   }
