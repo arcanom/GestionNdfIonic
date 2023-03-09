@@ -12,6 +12,9 @@
 
       <ion-card-header>
         <ion-icon name="arrow-back-outline" color="primary" routerLink="/mesndf"></ion-icon>
+        <ion-item *ngFor="let img of imgs">
+          <img src={{img.path}} alt="">
+      </ion-item>
         <ion-card-title>{{title}}</ion-card-title>
         <ion-card-subtitle>Fait le {{date | date}}</ion-card-subtitle>
       </ion-card-header>
@@ -19,6 +22,8 @@
         <ion-label>Coût : {{amount}}</ion-label>
         <ion-label> Description : {{description}} </ion-label>
         <ion-label> Categorie : {{category}}</ion-label>
+        <ion-label> Crée par : {{nameEmployeFirstname}} {{nameEmployeLastname}}</ion-label>
+        <ion-label> Traité par : {{nameAdminFirstname}} {{nameAdminLastname}}</ion-label>
         <ion-label *ngIf="status==='INPROGRESS'" color="primary"> En cours de traitement</ion-label>
         <ion-label *ngIf="status==='VALIDATED'" color="success"> Validé en cours  de paiement</ion-label>
         <ion-label *ngIf="status==='REFUSED'" color="danger"> Refusé</ion-label>

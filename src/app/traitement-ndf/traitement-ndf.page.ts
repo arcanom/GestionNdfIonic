@@ -13,8 +13,9 @@ export class TraitementNdfPage implements OnInit {
 
   ndfs : any
   status : any
-
+  idAdmin : any
   ngOnInit() {
+    this.idAdmin =  localStorage.getItem("id")
     this.getAllNdf()
   }
 
@@ -27,7 +28,8 @@ export class TraitementNdfPage implements OnInit {
 
   updateStatusToValidated(id:number){
     this.status = {
-      status: "VALIDATED"
+      status: "VALIDATED",
+      admin: this.idAdmin
     }
 
     this.httpService.updateStatusNdf(id,this.status).subscribe(x=> {
@@ -39,7 +41,8 @@ export class TraitementNdfPage implements OnInit {
 
   updateStatusToRefused(id:number){
     this.status = {
-      status: "REFUSED"
+      status: "REFUSED",
+      admin: this.idAdmin
     }
 
     this.httpService.updateStatusNdf(id,this.status).subscribe(x=> {
@@ -51,7 +54,8 @@ export class TraitementNdfPage implements OnInit {
 
   updateStatusToPaid(id:number){
     this.status = {
-      status: "PAID"
+      status: "PAID",
+      admin: this.idAdmin
     }
 
     this.httpService.updateStatusNdf(id,this.status).subscribe(x=> {

@@ -25,7 +25,8 @@ export class FormulaireNdfPage implements OnInit {
   role: any
   ngOnInit() {
     this.userdetails = JSON.parse(sessionStorage.getItem("userdetails"))
-    this.role = this.userdetails.authorities[0].authority
+    this.role =  localStorage.getItem("role")
+    console.log(this.role)
     this.idEmployee =  localStorage.getItem("id")
     this.getCategories()
   }
